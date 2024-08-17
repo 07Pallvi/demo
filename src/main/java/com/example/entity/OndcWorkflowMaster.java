@@ -1,6 +1,7 @@
 package com.example.entity;
 
 import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,11 +15,11 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "form")
-public class Form {
+@EqualsAndHashCode(callSuper = false)
+@Table(name = "ondc_workflow_master")
+public class OndcWorkflowMaster  {
 
 //	private static final long serialVersionUID = 1L;
 
@@ -26,16 +27,17 @@ public class Form {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
 
-	@Column(name = "form_id", unique = true)
-	private String formId;
+	@Column(name = "workflow_name")
+	private String workflowName;
 
-	@Column(name = "form_name")
-	private String formName;
+	@Column(name = "workflow_code")
+	private String workflowCode;
 
-	@Column(name = "form_category")
-	private String formCategory;
+	@Column(name = "workflow_order")
+	private int workflowOrder;
 
-	@Column(name = "form_url")
-	private String formUrl;
+	@Column(name = "is_active")
+	private boolean isActive;
 
 }
+
